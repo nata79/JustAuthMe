@@ -1,0 +1,7 @@
+resource1:
+  user_id: 1
+  prop: 'resource1'
+
+resource2:
+  user_id: 2
+  prop: 'resource2'
