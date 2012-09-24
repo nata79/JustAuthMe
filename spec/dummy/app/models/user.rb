@@ -1,9 +1,9 @@
 class User
 	def id
-	 return 1
+	 return @id
 	end
 
-  def role
-    'admin'
+  def id=(value)
+    @id = value
   end
 end
