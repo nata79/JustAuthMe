@@ -1,0 +1,25 @@
+<%= form_for(@nested_resource) do |f| %>
+  <% if @nested_resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nested_resource.errors.count, "error") %> prohibited this nested_resource from being saved:</h2>
+
+      <ul>
+      <% @nested_resource.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :prop %><br />
+    <%= f.text_field :prop %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_resource_id %><br />
+    <%= f.number_field :parent_resource_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

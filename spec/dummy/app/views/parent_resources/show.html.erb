@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Prop:</b>
+  <%= @parent_resource.prop %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @parent_resource.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_parent_resource_path(@parent_resource) %> |
+<%= link_to 'Back', parent_resources_path %>

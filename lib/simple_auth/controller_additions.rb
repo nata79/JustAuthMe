@@ -9,21 +9,26 @@ module SimpleAuth
       end
 
       module ClassMethods        
+
         def simple_auth(resource, options={})
           
-          auth_object = "@#{resource.name.underscore}"
+          if options[:through]
+            auth_object = "@#{options[:through].name.underscore}"
+          else
+            auth_object = "@#{resource.name.underscore}"
+          end
 
           send :define_method, "load_#{resource.name.underscore}_simple_auth" do
 
             # Load resource
             if params[:action] == 'index'
-              instance_variable_set("#{auth_object.pluralize}", resource.all)
+              SimpleAuth::ControllerResources.load_on_index(resource, self, options, params)
             elsif params[:action] == 'create'
-              instance_variable_set(auth_object, resource.new(params[resource.name.underscore.to_sym]))
+              SimpleAuth::ControllerResources.load_on_create_or_new(resource, self, options, params)
             elsif params[:action] == 'new'
-              instance_variable_set(auth_object, resource.new(params["#{resource.name.underscore}".to_sym]))
+              SimpleAuth::ControllerResources.load_on_create_or_new(resource, self, options, params)
             else
-              instance_variable_set(auth_object, resource.find(params[:id])) if params[:id]
+              SimpleAuth::ControllerResources.load_by_id(resource, self, options, params)
             end
 
           end

@@ -1,0 +1,7 @@
+nested_resource1:
+  prop: 'prop1'
+  parent_resource: parent_resource1
+
+nested_resource2:
+  prop: 'prop2'
+  parent_resource: parent_resource2

@@ -1,4 +1,11 @@
 Dummy::Application.routes.draw do
+  
+  resources :parent_resources
+
+  resources :parent_resources do
+    resources :nested_resources
+  end
+
   resources :resources
 
   # The priority is based upon order of creation:

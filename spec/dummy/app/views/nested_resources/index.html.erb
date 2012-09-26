@@ -1,0 +1,25 @@
+<h1>Listing nested_resources</h1>
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Parent resource</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @nested_resources.each do |nested_resource| %>
+  <tr>
+    <td><%= nested_resource.prop %></td>
+    <td><%= nested_resource.parent_resource_id %></td>
+    <td><%= link_to 'Show', nested_resource %></td>
+    <td><%= link_to 'Edit', edit_nested_resource_path(nested_resource) %></td>
+    <td><%= link_to 'Destroy', nested_resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Nested resource', new_nested_resource_path %>

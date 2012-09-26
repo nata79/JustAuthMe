@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Prop:</b>
+  <%= @nested_resource.prop %>
+</p>
+
+<p>
+  <b>Parent resource:</b>
+  <%= @nested_resource.parent_resource_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_nested_resource_path(@nested_resource) %> |
+<%= link_to 'Back', nested_resources_path %>

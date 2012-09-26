@@ -1,0 +1,2 @@
+module NestedResourcesHelper
+end
