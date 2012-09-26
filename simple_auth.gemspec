@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "SimpleAuth is the most tiny and simple authorization gem for ruby on rails."
   s.description = "SimpleAuth is a gem to manage authorization in the simplest way possible. Most times you just want to check if an object belongs to the current user, SimplyAuth does just that withou any configuration."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 3.2.8"
   s.add_development_dependency "rspec-rails"
