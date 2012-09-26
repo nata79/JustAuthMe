@@ -1,5 +1,5 @@
 class NestedResourcesController < ApplicationController
-  simple_auth NestedResource, through: ParentResource
+  simple_auth NestedResource, through: ParentResource, except: [:show]
   def index
   end
 

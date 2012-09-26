@@ -48,28 +48,28 @@ describe NestedResourcesController do
     assigns(:nested_resource).parent_resource.should eq(parent_resources(:parent_resource1))
   end
 
-  # it "should not authorize actions within except" do
-  #   get 'show', id: resources(:resource1).id
-  # end
+  it "should not authorize actions within except" do
+    get 'show', id: nested_resources(:nested_resource1).id, parent_resource_id: parent_resources(:parent_resource1).id
+  end
 
-  # it "should raise an exception when trying to access an anauthorized resource" do
-  #   lambda{
-  #     get 'edit', id: resources(:resource1).id 
-  #   }.should raise_error(SimpleAuth::AnauthorizedAccess)
+  it "should raise an exception when trying to access an anauthorized resource" do
+    lambda{
+      get 'edit', id: nested_resources(:nested_resource1).id, parent_resource_id: parent_resources(:parent_resource1).id
+    }.should raise_error(SimpleAuth::AnauthorizedAccess)
 
-  #   session[:user_id] = 10
+    session[:user_id] = 10
 
-  #   lambda{
-  #     get 'edit', id: resources(:resource1).id 
-  #   }.should raise_error(SimpleAuth::AnauthorizedAccess)    
-  # end
+    lambda{
+      get 'edit', id: nested_resources(:nested_resource1).id, parent_resource_id: parent_resources(:parent_resource1).id
+    }.should raise_error(SimpleAuth::AnauthorizedAccess)    
+  end
 
-  # it "should not raise an exception when trying to access an anauthorized resource" do
-  #   session[:user_id] = 1
+  it "should not raise an exception when trying to access an anauthorized resource" do
+    session[:user_id] = 1
 
-  #   lambda{
-  #     get 'edit', id: resources(:resource1).id 
-  #   }.should_not raise_error(SimpleAuth::AnauthorizedAccess)    
-  # end
+    lambda{
+      get 'edit', id: nested_resources(:nested_resource1).id, parent_resource_id: parent_resources(:parent_resource1).id
+    }.should_not raise_error(SimpleAuth::AnauthorizedAccess)    
+  end
 
 end
