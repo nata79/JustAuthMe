@@ -1,4 +1,4 @@
-module SimpleAuth
+module JustAuthMe
   class AnauthorizedAccess < StandardError
   end
 end

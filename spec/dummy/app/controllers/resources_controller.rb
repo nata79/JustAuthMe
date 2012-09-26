@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-  simple_auth Resource, except: [:show]
+  just_auth_me Resource, except: [:show]
 
   def index
   end

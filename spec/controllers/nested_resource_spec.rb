@@ -55,13 +55,13 @@ describe NestedResourcesController do
   it "should raise an exception when trying to access an anauthorized resource" do
     lambda{
       get 'edit', id: nested_resources(:nested_resource1).id, parent_resource_id: parent_resources(:parent_resource1).id
-    }.should raise_error(SimpleAuth::AnauthorizedAccess)
+    }.should raise_error(JustAuthMe::AnauthorizedAccess)
 
     session[:user_id] = 10
 
     lambda{
       get 'edit', id: nested_resources(:nested_resource1).id, parent_resource_id: parent_resources(:parent_resource1).id
-    }.should raise_error(SimpleAuth::AnauthorizedAccess)    
+    }.should raise_error(JustAuthMe::AnauthorizedAccess)    
   end
 
   it "should not raise an exception when trying to access an anauthorized resource" do
@@ -69,7 +69,7 @@ describe NestedResourcesController do
 
     lambda{
       get 'edit', id: nested_resources(:nested_resource1).id, parent_resource_id: parent_resources(:parent_resource1).id
-    }.should_not raise_error(SimpleAuth::AnauthorizedAccess)    
+    }.should_not raise_error(JustAuthMe::AnauthorizedAccess)    
   end
 
 end

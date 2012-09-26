@@ -1,4 +1,4 @@
-module SimpleAuth
+module JustAuthMe
   class ControllerResources
     def self.load_on_index(resource, controller, options={}, params={})
       set_resource_object resource

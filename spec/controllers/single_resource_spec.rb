@@ -49,13 +49,13 @@ describe ResourcesController do
   it "should raise an exception when trying to access an anauthorized resource" do
     lambda{
       get 'edit', id: resources(:resource1).id 
-    }.should raise_error(SimpleAuth::AnauthorizedAccess)
+    }.should raise_error(JustAuthMe::AnauthorizedAccess)
 
     session[:user_id] = 10
 
     lambda{
       get 'edit', id: resources(:resource1).id 
-    }.should raise_error(SimpleAuth::AnauthorizedAccess)    
+    }.should raise_error(JustAuthMe::AnauthorizedAccess)    
   end
 
   it "should not raise an exception when trying to access an anauthorized resource" do
@@ -63,7 +63,7 @@ describe ResourcesController do
 
     lambda{
       get 'edit', id: resources(:resource1).id 
-    }.should_not raise_error(SimpleAuth::AnauthorizedAccess)    
+    }.should_not raise_error(JustAuthMe::AnauthorizedAccess)    
   end
 
 end

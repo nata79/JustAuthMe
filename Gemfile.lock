@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simple_auth (0.0.1)
+    just_auth_me (0.0.1alpha)
       rails (~> 3.2.8)
 
 GEM
@@ -107,6 +107,6 @@ PLATFORMS
 
 DEPENDENCIES
   jquery-rails
+  just_auth_me!
   rspec-rails
-  simple_auth!
   sqlite3
