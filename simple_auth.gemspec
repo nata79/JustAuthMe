@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ["André Barbosa"]
   s.email       = ["albmail88@gmail.com"]
   s.homepage    = "https://github.com/nata79/simply_auth"
-  s.summary     = "SimpleAuth is the most tiny and simple authorization gem for ruby on rail."
+  s.summary     = "SimpleAuth is the most tiny and simple authorization gem for ruby on rails."
   s.description = "SimpleAuth is a gem to manage authorization in the simplest way possible. Most times you just want to check if an object belongs to the current user, SimplyAuth does just that withou any configuration."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
