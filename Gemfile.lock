@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    just_auth_me (0.0.1alpha)
+    just_auth_me (0.0.2alpha)
       rails (~> 3.2.8)
 
 GEM

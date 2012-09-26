@@ -64,6 +64,18 @@ describe NestedResourcesController do
     }.should raise_error(JustAuthMe::AnauthorizedAccess)    
   end
 
+  it "should raise an exception when trying to access an anauthorized resource index" do
+    lambda{
+      get 'index', parent_resource_id: parent_resources(:parent_resource1).id
+    }.should raise_error(JustAuthMe::AnauthorizedAccess)
+
+    session[:user_id] = 10
+
+    lambda{
+      get 'index', parent_resource_id: parent_resources(:parent_resource1).id
+    }.should raise_error(JustAuthMe::AnauthorizedAccess)    
+  end
+
   it "should not raise an exception when trying to access an anauthorized resource" do
     session[:user_id] = 1
 

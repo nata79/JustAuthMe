@@ -40,9 +40,9 @@ module JustAuthMe
             # Authorize resource
             raise JustAuthMe::AnauthorizedAccess unless current_user
 
-            if (params[:action] != 'index'  and 
-                params[:action] != 'create' and 
-                params[:action] != 'new'    and 
+            if ((params[:action] != 'index'   or options[:through]) and 
+                (params[:action] != 'create'  or options[:through]) and 
+                (params[:action] != 'new'     or options[:through]) and 
                 instance_variable_defined?(auth_object))
 
               raise JustAuthMe::AnauthorizedAccess unless current_user.id == instance_variable_get(auth_object).user_id
