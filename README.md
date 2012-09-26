@@ -1,6 +1,6 @@
 # SimplyAuth
 
-SimplyAuth is a gem to manage authorization in the simplest way possible. Most times you just want to check if an object belongs to the current user, SimplyAuth does just that withou any configuration.
+SimplyAuth is a gem to manage authorization in the simplest way possible. Most times you just want to check if an object belongs to the current user, SimplyAuth does just that without any configuration.
 
 ## Installation
 
